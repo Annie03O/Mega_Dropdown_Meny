@@ -1,0 +1,103 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+nav {
+    position: fixed;
+    width: 100%;
+    z-index: 999;
+    height: 65px;
+    line-height: 65px;
+}
+
+nav .behallare {
+    position: relative;
+    display: flex;
+    width: 100%;
+    padding: 0 30px;
+    margin: auto;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.behallare .kategorier {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+li {
+    position: relative;
+    list-style: none;
+    margin: 0 20px;
+    font-size: 20px;
+    white-space: nowrap;
+}
+
+li input[type="radio"] {
+    display: none;
+}
+
+li label {
+    cursor: pointer;
+    font-weight: bold;
+    color: rgb(0, 0, 224);
+    text-decoration: none;
+}
+
+
+/* När radion är checked – visa meny */
+li input[type="radio"]:checked ~ .mega-meny {
+    max-height: 1000px;
+    opacity: 1;
+}
+
+/* Grundstil för länkar */
+a {
+    color: rgb(0, 0, 224);
+    text-decoration: none;
+}
+
+/* Dropdown (gömd från början, men inte med display: none) */
+.mega-meny {
+    max-height: 0;
+    overflow: hidden;
+    position: absolute;
+    top: 100%;  
+    left: 50%;
+    transform: translateX(-50%);
+    width: 1000px;
+    z-index: 1000;
+    background: #fff;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.15);
+    transition: max-height 0.5s ease, opacity 0.5s ease;
+    opacity: 0;
+}
+
+.mega-meny .innehall {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    width: 100%;
+    padding: 25px 20px;
+}
+
+.mega-meny .innehall ul {
+    width: 150px;
+    text-align: center;
+    margin: auto 50px;
+}
+
+.mega-meny .innehall ul li {
+    width: fit-content;
+}
+
+.mega-meny .innehall .bild img {
+    width: 270px;
+    display: block;
+}
